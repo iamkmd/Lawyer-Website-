@@ -16,8 +16,12 @@
     font-style: normal
 }
 
+
+/* changes added */
 :root {
-    --swiper-theme-color: #007aff
+    --swiper-theme-color: #d2de32;
+    --swiper-navigation-color:#d2de32;
+    opacity: 1;
 }
 
 :host {
@@ -263,8 +267,17 @@
     --swiper-navigation-size: 44px
 }
 
-.swiper-button-next,.swiper-button-prev {
+
+/* changes */
+
+.swiper-button-next.custom-swiper-button-next,.swiper-button-prev.custom-swiper-button-prev {
     position: absolute;
+    left: 20px;
+    transform: translateY(-50%);
+    transition: .3s all ease;
+    -webkit-transition: .3s all ease;
+    -moz-transition: .3s all ease;
+    transition: .3s all ease;
     top: var(--swiper-navigation-top-offset,50%);
     width: calc(var(--swiper-navigation-size)/ 44 * 27);
     height: var(--swiper-navigation-size);
@@ -274,8 +287,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--swiper-navigation-color,var(--swiper-theme-color))
+    color: var(--swiper-navigation-color,var(--swiper-theme-color));
+ 
 }
+ /* changes */
+.swiper-button-next.custom-swiper-button-next:after,
+.swiper-button-prev.custom-swiper-button-prev:after{
+    display: none;
+}
+ /* changes added */
+.swiper-button-next.custom-swiper-button-next i,
+.swiper-button-prev.custom-swiper-button-prev i{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2.2rem;
+
+}
+
+/* changes added */
+.swiper-button-next.custom-swiper-button-next:hover,
+.swiper-button-prev.custom-swiper-button-prev:hover{
+
+    opacity: .5;
+
+}
+
+.swiper-button-next.custom-swiper-button-next{
+    left: auto;
+    right: 20px;
+}
+
+
+
 
 .swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled {
     opacity: .35;
@@ -349,11 +396,11 @@
 }
 
 .swiper-pagination.swiper-pagination-hidden {
-    opacity: 0
+    opacity: 0;
 }
 
 .swiper-pagination-disabled>.swiper-pagination,.swiper-pagination.swiper-pagination-disabled {
-    display: none!important
+    display: none!important;
 }
 
 .swiper-horizontal>.swiper-pagination-bullets,.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom,.swiper-pagination-fraction {
